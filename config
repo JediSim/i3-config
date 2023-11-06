@@ -52,6 +52,7 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border none
 # Bureau — Plasma
 for_window [title="Bureau — Plasma"] kill; floating enable; border none
+for_window [title="Bureau @ QRect.*"] kill; floating enable; border none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -111,7 +112,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 bindsym $mod+m focus right
 
 # alternatively, you can use the cursor keys:
@@ -203,6 +204,7 @@ bindsym $mod+Shift+r restart
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 # using plasma's logout screen instead of i3's
 bindsym $mod+Shift+e exec --no-startup-id qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+bindsym $mod+l exec --no-startup-id qdbus-qt5 org.kde.ksmserver /ScreenSaver org.freedesktop.ScreenSaver.Lock 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
